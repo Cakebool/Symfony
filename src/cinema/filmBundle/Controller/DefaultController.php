@@ -20,7 +20,14 @@ class DefaultController extends Controller
     */
     public function listAction()
     {
-        return $this->render('cinemafilmBundle:Default:list.html.twig');
+        $films = $this->getDoctrine()->getRepository('cinemafilmBundle:Film')->findAll();
+        
+        $titre_de_la_page = 'Films de la bibliothèque';
+        
+        return $this->render(
+            'cinemafilmBundle:Film:list.html.twig',
+            ['films' => $livres, 'titre' => $titre_de_la_page]
+        );
     }
     
     /**
@@ -28,6 +35,11 @@ class DefaultController extends Controller
     */
     public function showAction($id)
     {
-        return $this->render('cinemafilmBundle:Default:show.html.twig');
+        $film = $this->getDoctrine()->getRepository('cinemafilmBundle:Film')->find($id);
+        
+        return $this->render(
+            'cinemafilmBundle:Film:show.html.twig',
+            ['livre' => $livre]
+        );
     }
 }
