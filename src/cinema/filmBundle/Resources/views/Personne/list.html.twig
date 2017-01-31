@@ -68,14 +68,14 @@
             <div class="col-md-3">
                 <p class="lead">Cinéma</p>
                 <div class="list-group">
-                    <a href="{{ path('page_films') }}" class="list-group-item active">Films</a>
+                    <a href="cinema-films.html" class="list-group-item active">Films</a>
                     <a href="cinema-realisateurs.html" class="list-group-item">Réalisateurs</a>
                 </div>
             </div>
 
             <div class="col-md-9">
 			
-				<h2>Liste des films</h2>
+				<h2>Les films de {{personne.prenom}} {{personne.nom}}</h2>
 				
 				<br />
 			    {% for film in films %}
@@ -87,7 +87,7 @@
                     </div>
                     <div class="ratings">
                         <p class="pull-right">sorti le {{ film.date | date('d/m/Y') }}</p>
-                        <p>Réalisé par : <a href="{{ path('page_realisateur', {'id': personne.id}) }}">{{ film.realisateur }}</a></p>
+                        <p>Réalisé par : <a href="{{ path('page_realisateur', {'id': realisateur.id}) }}">{{ film.realisateur }}</a></p>
                     </div>
                 </div>
 				{% endfor %}

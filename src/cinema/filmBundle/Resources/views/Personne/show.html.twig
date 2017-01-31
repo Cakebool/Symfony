@@ -75,22 +75,21 @@
 
             <div class="col-md-9">
 			
-				<h2>Liste des films</h2>
-				
-				<br />
-			    {% for film in films %}
+			<h2>Les films de {{personne.prenom}} {{personne.nom}}</h2>	
+			    
 				<div class="thumbnail">
                     <div class="caption-full">
                         <h4 class="pull-right">{{ film.genre }}</h4>
-                        <h4><a href="{{ path('page_film', {'id': film.id}) }}">{{ film.titre }}</a></h4>
+                        <h4>{{ film.titre }}</h4>
                         <p>{{ film.synopsis }}</p>
                     </div>
                     <div class="ratings">
                         <p class="pull-right">sorti le {{ film.date | date('d/m/Y') }}</p>
-                        <p>Réalisé par : <a href="{{ path('page_realisateur', {'id': personne.id}) }}">{{ film.realisateur }}</a></p>
+                        <p>Réalisé par : <a href="cinema-films-realisateur.html">{{ film.realisateur }}</a></p>
                     </div>
+                    <p><a href="{{ path('page_films') }}">Retour</a></p>
                 </div>
-				{% endfor %}
+				
 				
 
             </div>

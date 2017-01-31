@@ -190,28 +190,5 @@ class Film
     {
         return $this->genre;
     }
-
-    /**
-     * Set personne
-     *
-     * @param \cinema\filmBundle\Entity\Personne $personne
-     *
-     * @return Film
-     */
-    public function setPersonne(\cinema\filmBundle\Entity\Personne $personne = null)
-    {
-        $this->Personne = $personne;
-
-        return $this;
-    }
-
-    /**
-     * Get personne
-     *
-     * @return \cinema\filmBundle\Entity\Personne
-     */
-    public function getPersonne()
-    {
-        return $this->Personne;
-    }
 }
+

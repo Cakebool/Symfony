@@ -44,4 +44,32 @@ class DefaultController extends Controller
             ['film' => $film]
         );
     }
+    
+    /**
+    * @Route("/realisateurs", name="page_realisateurs")
+    */
+    public function listRea()
+    {
+        $realisateurs = $this->getDoctrine()->getRepository('cinemafilmBundle:Personne')->findAll();
+        
+        $titre_de_la_page = 'Réalisateurs';
+        
+        return $this->render(
+            'cinemafilmBundle:Personne:list.html.twig',
+            ['realisateurs' => $realisateurs, 'titre' => $titre_de_la_page]
+        );
+    }
+    
+    /**
+    * @Route("/realisateur/{id}", requirements={"id": "\d+"}, name="page_realisateur")
+    */
+    public function showRea($id)
+    {
+        $realisateur = $this->getDoctrine()->getRepository('cinemafilmBundle:Personne')->find($id);
+        
+        return $this->render(
+            'cinemafilmBundle:Personne:show.html.twig',
+            ['realisateur' => $realisateur]
+        );
+    }
 }
