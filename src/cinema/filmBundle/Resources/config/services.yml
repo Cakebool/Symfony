@@ -1,0 +1,4 @@
+services:
+#    cinemafilm.example:
+#        class: cinema\filmBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
