@@ -4,11 +4,13 @@ namespace cinema\filmBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/", name="page_accueil")
      */
     public function indexAction()
     {
@@ -16,7 +18,7 @@ class DefaultController extends Controller
     }
     
     /**
-    * @Route("/films")
+    * @Route("/films", name="page_films")
     */
     public function listAction()
     {
@@ -26,12 +28,12 @@ class DefaultController extends Controller
         
         return $this->render(
             'cinemafilmBundle:Film:list.html.twig',
-            ['films' => $livres, 'titre' => $titre_de_la_page]
+            ['films' => $films, 'titre' => $titre_de_la_page]
         );
     }
     
     /**
-    * @Route("/film/{id}", requirements={"id": "\d+"})
+    * @Route("/film/{id}", requirements={"id": "\d+"}, name="page_film")
     */
     public function showAction($id)
     {
@@ -39,7 +41,7 @@ class DefaultController extends Controller
         
         return $this->render(
             'cinemafilmBundle:Film:show.html.twig',
-            ['livre' => $livre]
+            ['film' => $film]
         );
     }
 }
