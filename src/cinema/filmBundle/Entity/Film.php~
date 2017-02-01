@@ -50,10 +50,8 @@ class Film
     private $realisateur;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="genre", type="string", length=255)
-     */
+    * @ORM\ManyToOne(targetEntity="Genre", inversedBy="films")
+    */
     private $genre;
     
     /**
@@ -190,5 +188,28 @@ class Film
     {
         return $this->genre;
     }
-}
 
+    /**
+     * Set personne
+     *
+     * @param \cinema\filmBundle\Entity\Personne $personne
+     *
+     * @return Film
+     */
+    public function setPersonne(\cinema\filmBundle\Entity\Personne $personne = null)
+    {
+        $this->Personne = $personne;
+
+        return $this;
+    }
+
+    /**
+     * Get personne
+     *
+     * @return \cinema\filmBundle\Entity\Personne
+     */
+    public function getPersonne()
+    {
+        return $this->Personne;
+    }
+}
