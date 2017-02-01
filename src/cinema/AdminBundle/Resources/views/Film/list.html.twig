@@ -1,0 +1,10 @@
+<h1>Liste des films :</h1>
+<ul>
+{% for film in films %}
+    <li>
+        <a href="{{ path('admin_film_modif', {'id': film.id}) }}">{{ film.titre }}</a>
+        <a href="{{ path('admin_film_supprimer', {'id': film.id}) }}">(x)</a>
+    </li>
+{% endfor %}
+</ul>
+<a href="{{ path('admin_film_ajout') }}">Ajouter</a>

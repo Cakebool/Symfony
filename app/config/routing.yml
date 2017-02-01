@@ -1,3 +1,8 @@
+cinema_admin:
+    resource: "@cinemaAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 cinemafilm:
     resource: "@cinemafilmBundle/Controller/"
     type:     annotation

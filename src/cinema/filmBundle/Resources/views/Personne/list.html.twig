@@ -1,5 +1,5 @@
  {% extends 'cinemafilmBundle::layout.html.twig' %}
-    {% block title %}Liste des films{% endblock %}
+    {% block title %}Liste des réalisateurs{% endblock %}
     
     {% block body %}
     
@@ -11,12 +11,17 @@
 				<div class="well">
                     <div class="row">
                         <div class="col-md-12">
-                            <strong>{{personne.prenom}} {{personne.nom}}</strong> (58 ans)<br />
+                            <strong>{{personne.prenom}} {{personne.nom}}</strong>
+                            <span>
+                                
+                                {{personne.birth | date('d/m/Y')}}
+                                  
+                            </span><br />
 							<br />
 							<p></p>
 							<hr />
 							<div class="text-right">
-								<a href="cinema-films-realisateur.html" class="btn btn-success">Voir ses films</a>
+								<a href="{{ path('page_realisateur', {'id': personne.id}) }}" class="btn btn-success">Voir ses films</a>
 							</div>
 						</div>
                     </div>

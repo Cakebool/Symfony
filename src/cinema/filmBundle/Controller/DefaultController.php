@@ -69,7 +69,14 @@ class DefaultController extends Controller
         
         return $this->render(
             'cinemafilmBundle:Personne:show.html.twig',
-            ['realisateur' => $realisateur]
+            ['realisateur' => $realisateur  ]
+        );
+        
+        $films = $this->getDoctrine()->getRepository('cinemafilmBundle:Film')->findByPersonne($id);
+        
+        return $this->render(
+            'cinemafilmBundle:Personne:show.html.twig',
+            ['films' => $films]
         );
     }
 }

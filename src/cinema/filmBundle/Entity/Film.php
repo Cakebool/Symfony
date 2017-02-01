@@ -57,7 +57,7 @@ class Film
     /**
     * @ORM\ManyToOne(targetEntity="Personne", inversedBy="films")
     */
-    private $Personne;
+    private $personne;
 
     /**
      * Get id
