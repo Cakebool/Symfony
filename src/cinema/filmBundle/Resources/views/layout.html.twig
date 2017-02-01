@@ -39,7 +39,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ path('page_accueil') }}">Devschool</a>
+                <a class="navbar-brand" href="{{ path('page_accueil') }}">Netflix and chill</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -51,7 +51,7 @@
                         <a href="{{ path('page_films') }}">Cinéma</a>
                     </li>
                     <li>
-                        <a href="#">Admin</a>
+                        <a href="{{ path('page_admin') }}">Admin</a>
                     </li>
                 </ul>
             </div>
@@ -73,12 +73,12 @@
                 </div>
             </div>
 
-            <div class="col-md-9">
+            
 			
 				{% block body %}{% endblock %}
 				
 				
-            </div>
+            
 
         </div>
 

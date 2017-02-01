@@ -12,7 +12,7 @@ use cinema\AdminBundle\Form\FilmType;
 class AdminFilmController extends Controller
 {
     /**
-    * @Route("/ajout")
+    * @Route("/ajout", name="admin_film_ajout")
     */
     public function addAction(Request $request)
     {
