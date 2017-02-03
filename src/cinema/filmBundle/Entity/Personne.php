@@ -169,4 +169,8 @@ class Personne
     {
         return $this->films;
     }
+    
+    public function __toString() {
+        return $this->prenom . ' ' . $this->nom;
+    }
 }

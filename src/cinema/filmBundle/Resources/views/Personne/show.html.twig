@@ -2,23 +2,24 @@
     {% block title %}{{realisateur.prenom}} {{realisateur.nom}}{% endblock %}
     
     {% block body %}
+         <div class="col-md-9">
           <h2>Les films de {{realisateur.prenom}} {{realisateur.nom}}</h2>
        {% for film in films %}
         <div class="thumbnail">
             <div class="caption-full">
-                <h4 class="pull-right"></h4>
 
-
+                <h4 class="pull-right">{{ film.genre }}</h4>
                 <h4>{{ film.titre}}</h4>
                 <p>{{ film.synopsis }}</p>
             </div>
             <div class="ratings">
                 <p class="pull-right">sorti le  {{ film.date |date('d/m/Y') }}</p>
-                <p>Réalisé par {{ film.realisateur}}</p>
+                <p>Réalisé par {{ film.personne}}</p>
             </div>
 
 
         </div> {% endfor %}
+</div>
     {% endblock %}
 
 			

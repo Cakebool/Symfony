@@ -13,7 +13,7 @@ class FilmType extends AbstractType
             ->add('titre')
             ->add('synopsis')
             ->add('date')
-            ->add('realisateur')
+            ->add('personne')
             ->add('genre')
             ->add('save', SubmitType::class, array('label' => 'Enregistrer'))
         ;

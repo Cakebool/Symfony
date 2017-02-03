@@ -42,22 +42,21 @@ class Film
      */
     private $date;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="realisateur", type="string", length=255)
-     */
-    private $realisateur;
+    
 
     /**
+    * @var int
+    *
     * @ORM\ManyToOne(targetEntity="Genre", inversedBy="films")
     */
     private $genre;
     
     /**
+    * @var int
+    *
     * @ORM\ManyToOne(targetEntity="Personne", inversedBy="films")
     */
-    private $personne;
+    private $personne;  
 
     /**
      * Get id
@@ -141,29 +140,9 @@ class Film
         return $this->date;
     }
 
-    /**
-     * Set realisateur
-     *
-     * @param string $realisateur
-     *
-     * @return Film
-     */
-    public function setRealisateur($realisateur)
-    {
-        $this->realisateur = $realisateur;
+   
 
-        return $this;
-    }
-
-    /**
-     * Get realisateur
-     *
-     * @return string
-     */
-    public function getRealisateur()
-    {
-        return $this->realisateur;
-    }
+    
 
     /**
      * Set genre
@@ -198,7 +177,7 @@ class Film
      */
     public function setPersonne(\cinema\filmBundle\Entity\Personne $personne = null)
     {
-        $this->Personne = $personne;
+        $this->personne = $personne;
 
         return $this;
     }
@@ -210,6 +189,6 @@ class Film
      */
     public function getPersonne()
     {
-        return $this->Personne;
+        return $this->personne;
     }
 }
