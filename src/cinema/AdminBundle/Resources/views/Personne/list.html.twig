@@ -1,0 +1,15 @@
+{% extends 'cinemaAdminBundle::layout.html.twig' %}
+{% block title %}liste des films{% endblock %}
+    
+{% block body %}
+    <h1>Liste des réalisateurs :</h1>
+    <ul>
+    {% for personne in personnes %}
+        <li>
+            <a href="{{ path('admin_personne_modif', {'id': personne.id}) }}">{{ personne.prenom }} {{ personne.nom }}</a>
+            <a href="{{ path('admin_personne_supprimer', {'id': personne.id}) }}">(x)</a>
+        </li>
+    {% endfor %}
+    </ul>
+    <a href="{{ path('admin_personne_ajout') }}">Ajouter</a>
+{% endblock %} 
